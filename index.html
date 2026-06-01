@@ -1,19 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>A Message For You ❤️</title>
+<meta charset="UTF-8">
+<title>For You ❤️</title>
 
 <style>
-body{
+*{
 margin:0;
+padding:0;
+box-sizing:border-box;
 font-family:Arial,sans-serif;
-background:#ffe6ee;
-text-align:center;
-overflow-x:hidden;
 }
 
-.section{
-padding:60px 20px;
+body{
+background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+height:100vh;
+overflow:hidden;
+}
+
+.slide{
+display:none;
+height:100vh;
+width:100%;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+padding:30px;
+color:white;
+}
+
+.active{
+display:flex;
+}
+
+h1{
+font-size:3rem;
+margin-bottom:20px;
+}
+
+p{
+max-width:700px;
+font-size:1.2rem;
+line-height:1.8;
+margin-bottom:25px;
+}
+
+button{
+padding:14px 28px;
+border:none;
+border-radius:30px;
+cursor:pointer;
+font-size:18px;
+margin:10px;
+}
+
+.next{
+background:white;
+color:#ff4f7b;
 }
 
 .heart{
@@ -28,114 +72,174 @@ animation:beat 1s infinite;
 }
 
 .card{
-background:white;
-max-width:700px;
-margin:auto;
-padding:25px;
+background:rgba(255,255,255,0.15);
+backdrop-filter:blur(10px);
+padding:30px;
 border-radius:20px;
-box-shadow:0 0 15px rgba(0,0,0,0.1);
+max-width:800px;
 }
 
-button{
-padding:12px 25px;
-font-size:18px;
-border:none;
-border-radius:15px;
-cursor:pointer;
-margin:10px;
+#angryBtn{
+background:white;
+color:#ff4f7b;
+position:relative;
 }
 
-.yes{
-background:#ff5c8a;
-color:white;
-}
-
-.no{
-background:#ddd;
-}
-
-#finalMessage{
-display:none;
-font-size:22px;
-margin-top:20px;
-color:#ff3366;
+#smileBtn{
+background:#fff;
+color:#ff4f7b;
 }
 </style>
 </head>
 
 <body>
 
-<div class="section">
+<!-- Slide 1 -->
+<div class="slide active" id="s1">
 <div class="heart">❤️</div>
-<h1>Please Smile 🥺</h1>
-<p>Just 2 minutes... that's all I'm asking.</p>
+<h1>Please Smile</h1>
+<button class="next" onclick="nextSlide(2)">Open</button>
 </div>
 
-<div class="section">
+<!-- Slide 2 -->
+<div class="slide" id="s2">
 <div class="card">
-<h2>⚖️ Court Case No. 143</h2>
+<h1>Are You Still Angry? 🥺</h1>
 
-<p><b>Accused:</b> Me 😭</p>
-<p><b>Crime:</b> Being stupid and making mistakes.</p>
+<button class="next" onclick="nextSlide(3)">
+😡 Yes
+</button>
 
-<p><b>Evidence:</b></p>
-<p>✔ Missing your smile</p>
-<p>✔ Regretting my mistakes</p>
-<p>✔ Wanting to make things better</p>
-
-<p><b>Verdict Requested:</b></p>
-<p>Please consider one smile as bail. 😭❤️</p>
+<button class="next" onclick="nextSlide(5)">
+😊 No
+</button>
 </div>
 </div>
 
-<div class="section">
+<!-- Slide 3 -->
+<div class="slide" id="s3">
 <div class="card">
-<h2>💌 A Small Message</h2>
+<h1>⚖️ Court Case No. 143</h1>
 
 <p>
-I'm not trying to force anything.
+Judge: You 👑
+<br><br>
+Accused: Me 😭
+<br><br>
+Crime:
+Being careless with someone important.
 </p>
+
+<button class="next" onclick="nextSlide(4)">
+View Evidence
+</button>
+</div>
+</div>
+
+<!-- Slide 4 -->
+<div class="slide" id="s4">
+<div class="card">
+<h1>Evidence 📋</h1>
 
 <p>
-I just wanted you to know that I'm genuinely sorry.
+✔ I regret my mistakes.
+<br>
+✔ I miss your smile.
+<br>
+✔ I should have handled things better.
+<br>
+✔ You deserve respect and honesty.
 </p>
+
+<button class="next" onclick="nextSlide(6)">
+Final Appeal
+</button>
+</div>
+</div>
+
+<!-- Slide 5 -->
+<div class="slide" id="s5">
+<div class="card">
+<h1>That's Good 😭❤️</h1>
 
 <p>
-Whatever happens,
-you are important to me.
+Then let me say one thing...
 </p>
+
+<button class="next" onclick="nextSlide(6)">
+Continue
+</button>
+</div>
+</div>
+
+<!-- Slide 6 -->
+<div class="slide" id="s6">
+<div class="card">
+<h1>💌 I'm Sorry</h1>
 
 <p>
-And yes...
-I still hope to see that smile again. ❤️
+I won't try to justify anything.
+<br><br>
+I simply want to say that I'm genuinely sorry.
+<br><br>
+What happened cannot be changed,
+but I hope one day my actions can speak louder than this message.
+<br><br>
+No pressure.
+No expectations.
+Just a sincere apology.
 </p>
 
-<button class="yes" onclick="smile()">
+<button id="smileBtn" onclick="nextSlide(7)">
 😊 Smile
 </button>
 
-<button class="no" onmouseover="run(this)">
+<button id="angryBtn">
 😏 Still Angry
 </button>
-
-<div id="finalMessage">
-Yayyy ❤️<br><br>
-Mission Successful 😭🌷
+</div>
 </div>
 
-</div>
+<!-- Slide 7 -->
+<div class="slide" id="s7">
+<div class="heart">❤️</div>
+
+<h1>Thank You</h1>
+
+<p>
+Whether you forgive me today or later,
+I just wanted you to know that this apology is sincere.
+🌷
+</p>
 </div>
 
 <script>
-function smile(){
-document.getElementById("finalMessage").style.display="block";
+
+function nextSlide(num){
+
+document.querySelectorAll('.slide').forEach(
+slide=>slide.classList.remove('active')
+);
+
+document.getElementById('s'+num)
+.classList.add('active');
+
 }
 
-function run(btn){
-btn.style.position="absolute";
-btn.style.left=Math.random()*80+"%";
-btn.style.top=Math.random()*80+"%";
-}
+const angryBtn=document.getElementById("angryBtn");
+
+angryBtn.addEventListener("mouseover",()=>{
+
+angryBtn.style.position="absolute";
+
+angryBtn.style.left=
+Math.random()*80+"%";
+
+angryBtn.style.top=
+Math.random()*80+"%";
+
+});
+
 </script>
 
 </body>
