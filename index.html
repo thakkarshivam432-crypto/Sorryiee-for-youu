@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>For You ❤️</title>
+<title>A Message For You ❤️</title>
 
 <style>
 body{
 margin:0;
-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-background:#ffdde1;
-font-family:Arial;
-flex-direction:column;
-overflow:hidden;
+font-family:Arial,sans-serif;
+background:#ffe6ee;
+text-align:center;
+overflow-x:hidden;
 }
 
-h1{
-color:#ff0066;
+.section{
+padding:60px 20px;
 }
 
 .heart{
@@ -30,17 +26,117 @@ animation:beat 1s infinite;
 50%{transform:scale(1.2);}
 100%{transform:scale(1);}
 }
-</style>
 
+.card{
+background:white;
+max-width:700px;
+margin:auto;
+padding:25px;
+border-radius:20px;
+box-shadow:0 0 15px rgba(0,0,0,0.1);
+}
+
+button{
+padding:12px 25px;
+font-size:18px;
+border:none;
+border-radius:15px;
+cursor:pointer;
+margin:10px;
+}
+
+.yes{
+background:#ff5c8a;
+color:white;
+}
+
+.no{
+background:#ddd;
+}
+
+#finalMessage{
+display:none;
+font-size:22px;
+margin-top:20px;
+color:#ff3366;
+}
+</style>
 </head>
 
 <body>
 
+<div class="section">
 <div class="heart">❤️</div>
-
 <h1>Please Smile 🥺</h1>
+<p>Just 2 minutes... that's all I'm asking.</p>
+</div>
 
-<p>I have something special for you...</p>
+<div class="section">
+<div class="card">
+<h2>⚖️ Court Case No. 143</h2>
+
+<p><b>Accused:</b> Me 😭</p>
+<p><b>Crime:</b> Being stupid and making mistakes.</p>
+
+<p><b>Evidence:</b></p>
+<p>✔ Missing your smile</p>
+<p>✔ Regretting my mistakes</p>
+<p>✔ Wanting to make things better</p>
+
+<p><b>Verdict Requested:</b></p>
+<p>Please consider one smile as bail. 😭❤️</p>
+</div>
+</div>
+
+<div class="section">
+<div class="card">
+<h2>💌 A Small Message</h2>
+
+<p>
+I'm not trying to force anything.
+</p>
+
+<p>
+I just wanted you to know that I'm genuinely sorry.
+</p>
+
+<p>
+Whatever happens,
+you are important to me.
+</p>
+
+<p>
+And yes...
+I still hope to see that smile again. ❤️
+</p>
+
+<button class="yes" onclick="smile()">
+😊 Smile
+</button>
+
+<button class="no" onmouseover="run(this)">
+😏 Still Angry
+</button>
+
+<div id="finalMessage">
+Yayyy ❤️<br><br>
+Mission Successful 😭🌷
+</div>
+
+</div>
+</div>
+
+<script>
+function smile(){
+document.getElementById("finalMessage").style.display="block";
+}
+
+function run(btn){
+btn.style.position="absolute";
+btn.style.left=Math.random()*80+"%";
+btn.style.top=Math.random()*80+"%";
+}
+</script>
 
 </body>
 </html>
